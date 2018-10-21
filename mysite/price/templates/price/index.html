@@ -1,9 +1,43 @@
-{% if all_item_list %}
-    <ul>
-    {% for item in all_item_list %}
-        <li>{{ item.name }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No item are available.</p>
-{% endif %}
+
+<html>
+    <head>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Number</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Add date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in all_item_list %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <th>{{ item.name }}</th>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.sold_quantity }}</td>
+                        <td>{{ item.pub_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class="btn btn-default" type="button" name="button">Button</button>
+        </div>
+    </body>
+
+
+</html>
