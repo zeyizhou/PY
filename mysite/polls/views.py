@@ -8,8 +8,6 @@ from django.urls import reverse
 from django.views import generic
 
 from .models import Choice, Question
-from django.template import loader
-from django.http import Http404
 from django.shortcuts import render
 from django.utils import timezone
 
