@@ -22,6 +22,16 @@
             <td>{{ item.quantity }}</td>
             <td>{{ item.sold_quantity }}</td>
             <td>{{ item.pub_date }}</td>
+            <td><a class="btn btn-primary" role="button" href="{% url 'price:item_update' item.id %}">Update</a></td>
+            <td>
+                <form action="{% url 'price:item_delete' item.id %}" method="post" class="form-inline my-2 my-lg-0">
+                    {% csrf_token %}
+                    <input type="hidden" name="item_id" value="{{item.id}}"/>
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
         </tbody>
