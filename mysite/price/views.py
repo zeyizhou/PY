@@ -21,11 +21,11 @@ class DetailView(generic.DetailView):
 
 class PersonCreateView(generic.CreateView):
     model = Item
-    template = 'price/add.html'
+    template_name = 'price/add.html'
     fields = '__all__'
-
+    
     initial = {'pub_date': timezone.now()}
-
+    success_url = reverse_lazy ('price:index')
 
 class ItemUpdate(generic.UpdateView):
     model = Item
