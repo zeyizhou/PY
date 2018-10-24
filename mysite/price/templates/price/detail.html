@@ -9,6 +9,6 @@
         <li>{{ item.sold_quantity }}</li>
         <li>{{ item.pub_date }}</li>
     </ul>
-    <a class="btn btn-primary" role="button" href="{% url 'price:index' %}">Button</a>
+    <a class="btn btn-primary" role="button" href="{% url 'price:item_update' item.id %}">Edit</a>
 </div>
 {% endblock %}

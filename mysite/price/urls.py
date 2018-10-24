@@ -16,4 +16,6 @@ urlpatterns = [
 
     # /price/2/delete
     path ('<int:pk>/delete', views.ItemDelete.as_view(), name='item_delete'),
+
+    url (r'^import/', views.import_data, name="import"),
 ]
