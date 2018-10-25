@@ -1,3 +1,7 @@
 django
 gunicorn
 django-heroku
+ajax-search
+bootstrap3
+crispy_forms
+django_excel
